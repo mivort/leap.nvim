@@ -353,6 +353,7 @@ local function light_up_beacons(targets, _3fstart, _3fend)
       local _let_58_ = map(dec, target.pos)
       local lnum = _let_58_[1]
       local col = _let_58_[2]
+      virttext[1][1] = " " .. string.upper(virttext[1][1]) .. " "
       local id = api.nvim_buf_set_extmark(bufnr, hl.ns, lnum, (col + offset), {virt_text = virttext, virt_text_pos = "overlay", hl_mode = "combine", priority = hl.priority.label})
       table.insert(hl.extmarks, {bufnr, id})
     else
